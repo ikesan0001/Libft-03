@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 21:45:42 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/09 20:50:57 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/18 22:05:33 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	s = (char *)src;
 	i = 0;
-	j = ft_strlen(dst);
+	dstlen = ft_strlen(dst);
 	if (dstsize == 0)
 		return (ft_strlen(s));
-	if (dstsize < j + 1)
+	if (dstsize < dstlen + 1)
 		return (dstsize + ft_strlen(s));
-	while (dstsize > 0 && i < dstsize - j - 1 && s[i] != 0)
+	while (dstsize > 0 && i + dstlen < dstsize - 1 && s[i] != 0)
 	{
-		dst[j + i] = s[i];
+		dst[dstlen + i] = s[i];
 		i++;
 	}
-	dst[j + i] = 0;
-	return (j + ft_strlen(s));
+	dst[dstlen + i] = 0;
+	return (dstlen + ft_strlen(s));
 }
