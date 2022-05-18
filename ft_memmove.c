@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 23:05:55 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/18 23:02:05 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/18 23:15:02 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
 	if (dst == src || len == 0)
 		return (dst);
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
 	if (dst > src)
 	{
 		while (len-- > 0)
