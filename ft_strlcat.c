@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 21:45:42 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/18 22:05:33 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/18 23:00:01 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	char	*s;
 	size_t	i;
-	size_t	j;
+	size_t	dstlen;
 
 	s = (char *)src;
 	i = 0;

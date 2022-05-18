@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 23:06:25 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/18 22:04:00 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/18 22:57:31 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
-	unsigned char	*b;
+	unsigned char	*buf;
 
 	i = 0;
 	buf = (unsigned char *)b;

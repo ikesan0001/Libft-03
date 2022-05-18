@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 23:05:55 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/18 22:02:46 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/18 23:02:05 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (dst > src)
 	{
 		while (len-- > 0)
-			d[n] = s[n];
+			d[len] = s[len];
 	}
 	else
-		dst = ft_memcpy(dst, src, n);
+		dst = ft_memcpy(dst, src, len);
 	return (dst);
 }
