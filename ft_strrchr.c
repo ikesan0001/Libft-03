@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:12:36 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/17 00:18:27 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:42:44 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	if (S[i] == (char)c)
 		return (S + i);
-	return (0);
+	return (NULL);
 }

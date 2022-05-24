@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 01:11:59 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/08 01:50:35 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:43:27 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (S + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
