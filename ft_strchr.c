@@ -6,7 +6,7 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 11:35:58 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/24 15:42:26 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/27 09:04:51 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*S;
+	char	*src;
 	size_t	i;
-	size_t	j;
+	size_t	s_len;
 
-	S = (char *)s;
+	src = (char *)s;
 	i = 0;
-	j = ft_strlen(S);
-	while (i <= j)
+	s_len = ft_strlen(src);
+	while (i <= s_len)
 	{
-		if (S[i] == (char)c)
-			return (S + i);
+		if (src[i] == (char)c)
+			return (src + i);
 		i++;
 	}
 	return (NULL);
