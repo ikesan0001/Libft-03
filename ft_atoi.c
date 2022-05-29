@@ -6,12 +6,11 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:02:13 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/30 00:13:48 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/05/30 00:48:32 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isloverflow(char *s, int digit);
 int	ft_isspace(int c);
