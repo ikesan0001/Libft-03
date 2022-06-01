@@ -6,36 +6,34 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:02:13 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/30 00:48:32 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/01 22:54:39 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isloverflow(char *s, int digit);
-int	ft_isspace(int c);
+static int	ft_isloverflow(char *s, int digit);
+static int	ft_isspace(int c);
 
 int	ft_atoi(const char *str)
 {
-	char	*s;
 	long	i;
-	int		j;
+	size_t	j;
 	int		is;
 
 	i = 0;
 	j = 0;
 	is = 0;
-	s = (char *)str;
-	while (ft_isspace(s[0]))
-		s++;
-	if (s[j] == '+' || s[j] == '-')
+	while (ft_isspace(str[0]))
+		str++;
+	if (str[j] == '+' || str[j] == '-')
 		j++;
-	while (ft_isdigit(s[j]))
-		i = i * 10 + (long)(s[j++] - '0');
-	if (s[0] == '-')
+	while (ft_isdigit(str[j]))
+		i = i * 10 + (long)(str[j++] - '0');
+	if (str[0] == '-')
 		i *= -1;
-	if (--j >= 19)
-		is = ft_isloverflow(s, j);
+	if (--j >= strlen("9223372036854775807"))
+		is = ft_isloverflow(str, j);
 	if (is == 1 || is == -1)
 		i = 9223372036854775807 * is;
 	if (is == -1)
@@ -43,13 +41,13 @@ int	ft_atoi(const char *str)
 	return ((int)i);
 }
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return (c == '\t' || c == '\n' || c == '\v' || \
 c == '\f' || c == '\r' || c == ' ');
 }
 
-int	ft_isloverflow(char *s, int digit)
+static int	ft_isloverflow(char *s, size_t digit)
 {
 	int		sign;
 	char	edge[20];
@@ -66,7 +64,7 @@ int	ft_isloverflow(char *s, int digit)
 		}
 		s++;
 	}
-	if (digit > 19)
+	if (digit > strlen("9223372036854775807"))
 		return (sign);
 	if (ft_strncmp(edge, s, 19) < 0)
 		return (sign);
