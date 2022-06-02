@@ -6,14 +6,14 @@
 /*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:02:13 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/30 00:48:32 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/02 21:22:39 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isloverflow(char *s, int digit);
-int	ft_isspace(int c);
+static int	ft_isloverflow(char *s, int digit);
+static int	ft_isspace(int c);
 
 int	ft_atoi(const char *str)
 {
@@ -43,13 +43,13 @@ int	ft_atoi(const char *str)
 	return ((int)i);
 }
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return (c == '\t' || c == '\n' || c == '\v' || \
 c == '\f' || c == '\r' || c == ' ');
 }
 
-int	ft_isloverflow(char *s, int digit)
+static int	ft_isloverflow(char *s, int digit)
 {
 	int		sign;
 	char	edge[20];
