@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:46:37 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/10 13:21:04 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/12 02:50:00 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ char	*ft_itoa(int n)
 
 	backup = n;
 	i = 0;
+	if (n == INT_MIN)
+	{
+		
+	}
 	digit = ft_nbrlen(n);
 	c = (char *)malloc(digit);
 	if (c = NULL)
