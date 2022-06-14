@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+         #
+#    By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 12:30:14 by iryoga            #+#    #+#              #
-#    Updated: 2022/05/15 00:33:28 by iryoga           ###   ########.fr        #
+#    Updated: 2022/06/14 22:59:51 by iryoga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,8 @@ SRCS = ft_isalpha.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c \
-	   \
-	   ft_lstnew.c \
+	   
+	   # ft_lstnew.c \
 	   ft_lstadd_front.c \
 	   ft_lstsize.c \
 	   ft_lstlast.c \
