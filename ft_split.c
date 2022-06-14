@@ -6,13 +6,13 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/08 13:46:06 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/13 11:15:35 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c)
 {
 	char	**d;
 	int		i;
@@ -26,7 +26,7 @@ char	**ft_split(char const *s, char c);
 		if (d[j] == NULL)
 		{
 			free(d);
-			break;
+			break ;
 		}
 	}
 	return (d);
