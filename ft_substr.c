@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:47:38 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/20 22:58:12 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/20 23:01:16 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	c = (char *)malloc(len);
 	if (c == NULL)
 		return (NULL);
-	ft_strlcpy(c, s + start, len);
+	ft_strlcpy(c, s + start, len + 1);
 	return (c);
 }
