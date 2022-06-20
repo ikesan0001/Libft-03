@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:47:38 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/05 17:00:31 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/20 22:58:12 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*c;
+	size_t	s_len;
 
-	if (start >= ft_strlen(s) || len == 0 || start == 0)
+	if (s == NULL || len == SIZE_MAX)
 		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len || len == 0)
+		return (ft_strdup(""));
 	c = (char *)malloc(len);
 	if (c == NULL)
 		return (NULL);
-	ft_strlcpy(c, s + start - 1, len);
+	ft_strlcpy(c, s + start, len);
 	return (c);
 }
