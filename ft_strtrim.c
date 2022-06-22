@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:53:28 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/23 01:44:41 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/23 01:48:01 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	c_len -= i;
 */
 	i = 0;
-	while (s1[i] != '\0' && ft_strchr(set, s1[i]) != NULL)
+	while (s1[i] != '\0' && ft_strchr(set, s1[i]) == NULL)
 		i++;
 	c_len = ft_strlen(s1 + i);
 	if (c_len == 0)
 		return (ft_strdup(""));
 	j = ft_strlen(s1) - 1;
-	while (j > 0 && ft_strrchr(set, s1[j--]) != NULL)
+	while (j > 0 && ft_strchr(set, s1[j--]) == NULL)
 		c_len--;
 	c_len++;
 	c = ft_substr(s1, i, c_len);
