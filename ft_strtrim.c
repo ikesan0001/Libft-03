@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 16:53:28 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/23 00:46:47 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/23 00:48:51 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 			return (NULL);
 		c_len -= i;
 	}
-	c = ft_substr(s1, i + 1, c_len);
+	c = ft_substr(s1, i, c_len);
 	return (c);
 }
