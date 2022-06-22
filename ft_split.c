@@ -6,14 +6,14 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/23 02:59:28 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/23 03:00:35 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static size_t	ft_split_count(char const *s, char c);
-static char		*ft_split_trim(char const *src, char const set);
+static char		*ft_split_trim(char const *src, char const *set);
 static char		**ft_free(char **str, size_t end);
 
 char	**ft_split(char const *s, char c)
