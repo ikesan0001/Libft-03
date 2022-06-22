@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/23 02:53:49 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/23 02:55:16 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**ft_split(char const *s, char c)
 	if (d == NULL)
 		return (NULL);
 	i = 0;
-	ft_strlcpy(divider, c, 2);
+	ft_strlcpy(divider, &c, 2);
 	while (i < cnt)
 	{
 		s_trim = ft_strtrim(s, divider);
