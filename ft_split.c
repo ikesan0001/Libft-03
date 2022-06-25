@@ -6,12 +6,11 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/26 01:19:06 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/26 01:20:15 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	ft_split_count(char const *s, char c);
 static void		ft_cto0(char *s, char c);
@@ -32,9 +31,6 @@ char	**ft_split(char const *s, char c)
 	dst = ft_strdup(s);
 	if (dst == NULL)
 		return (NULL);
-	printf("\ns=%s\n", s);
-	printf("d=%s\n", dst);
-	printf("s_len=%zu\n", s_len);
 	cnt = ft_split_count(dst, c);
 	if (cnt == SIZE_MAX)
 		return (NULL);
@@ -49,7 +45,6 @@ char	**ft_split(char const *s, char c)
 		while (i < s_len && dst[i] == '\0')
 			i++;
 		splited[j] = ft_strdup(dst + i);
-		printf("splited[%zu] = %s\n", j, splited[j]);
 		if (splited[j] == NULL)
 			return (ft_free(splited, j, dst));
 		while (i < s_len && dst[i] != '\0')
