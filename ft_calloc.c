@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
+/*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:56:33 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/24 13:32:23 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/26 01:49:54 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*s;
+	size_t	bytes;
 
 	if (count == 0 || size == 0)
-	{
-		s = malloc(1);
-		if (s == NULL)
-			return (NULL);
-		ft_bzero(s, 1);
-		return (s);
-	}
-	if (SIZE_MAX / count < size || SIZE_MAX / size < count)
+		return (ft_calloc(1, 1));
+	bytes = count * size;
+	if (bytes / count != size)
 		return (NULL);
-	s = malloc(count * size);
+	s = malloc(bytes);
 	if (s == NULL)
 		return (NULL);
-	ft_bzero(s, count * size);
+	ft_bzero(s, bytes);
 	return (s);
 }
