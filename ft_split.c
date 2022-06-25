@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/26 01:04:45 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/26 01:06:02 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	**ft_split(char const *s, char c)
 		while (i < s_len && dst[i] == '\0')
 			i++;
 		splited[j] = ft_substr(dst, i + 1, ft_strlen(s));
-		printf("splited[%zu] = %s", j, splited[j]);
+		printf("splited[%zu] = %s\n", j, splited[j]);
 		if (splited[j] == NULL)
 			return (ft_free(splited, j, dst));
 		while (i < s_len && dst[i] != '\0')
