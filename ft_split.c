@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/25 11:41:11 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/25 11:44:01 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,9 @@ static void	ft_cto0(char const *s, char c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			s[i] == '\0';
+			s[i] = '\0';
 		i++;
 	}
-	return (s);
 }
 
 static size_t	ft_split_count(char const	*s, char	c)
