@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/26 01:06:53 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/26 01:08:45 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ char	**ft_split(char const *s, char c)
 	if (dst == NULL)
 		return (NULL);
 	printf("\ns=%s\n", s);
-	printf("dst=%s\n", dst);
+	printf("d=%s\n", dst);
+	printf("s_len=%zu\n", s_len);
 	cnt = ft_split_count(dst, c);
 	if (cnt == SIZE_MAX)
 		return (NULL);
