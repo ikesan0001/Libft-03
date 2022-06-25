@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/26 01:20:15 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/26 01:40:05 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,78 +14,64 @@
 
 static size_t	ft_split_count(char const *s, char c);
 static void		ft_cto0(char *s, char c);
-static char		**ft_free(char **str, size_t end, char *dst);
+static char		**ft_free(char **str, size_t end, char *d);
+static char		**ft_splitting(char **split, char *d, size_t cnt, size_t s_len);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**splited;
-	char	*dst;
+	char	**split;
+	char	*d;
 	size_t	s_len;
-	size_t	i;
 	size_t	cnt;
-	size_t	j;
 
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
-	dst = ft_strdup(s);
-	if (dst == NULL)
-		return (NULL);
-	cnt = ft_split_count(dst, c);
+	cnt = ft_split_count(s, c);
 	if (cnt == SIZE_MAX)
 		return (NULL);
-	splited = (char **)malloc((cnt + 1) * sizeof(char *));
-	if (splited == NULL)
+	split = (char **)malloc((cnt + 1) * sizeof(char *));
+	if (split == NULL)
 		return (NULL);
-	ft_cto0(dst, c);
-	i = 0;
-	j = 0;
-	while (i < s_len && j < cnt)
-	{
-		while (i < s_len && dst[i] == '\0')
-			i++;
-		splited[j] = ft_strdup(dst + i);
-		if (splited[j] == NULL)
-			return (ft_free(splited, j, dst));
-		while (i < s_len && dst[i] != '\0')
-			i++;
-		j++;
-	}
-	splited[j] = NULL;
-	free(dst);
-	return (splited);
+	d = ft_strdup(s);
+	if (d == NULL)
+		return (NULL);
+	ft_cto0(d, c);
+	split = ft_splitting(split, d, cnt, s_len);
+	free(d);
+	return (split);
 }
 
-static void	ft_cto0(char *dst, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (dst[i] != '\0')
-	{
-		if (dst[i] == c)
-			dst[i] = '\0';
-		i++;
-	}
-}
-
-static size_t	ft_split_count(char const *dst, char c)
+static size_t	ft_split_count(char const *d, char c)
 {
 	size_t	cnt;
 	size_t	i;
 
 	i = 0;
 	cnt = 0;
-	while (dst[i])
+	while (d[i])
 	{
-		if (dst[i] != c && (i == 0 || dst[i - 1] == c))
+		if (d[i] != c && (i == 0 || d[i - 1] == c))
 			cnt++;
 		i++;
 	}
 	return (cnt);
 }
 
-static char	**ft_free(char **str, size_t end, char *dst)
+static void	ft_cto0(char *d, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (d[i] != '\0')
+	{
+		if (d[i] == c)
+			d[i] = '\0';
+		i++;
+	}
+}
+
+static char	**ft_free(char **str, size_t end, char *d)
 {
 	size_t	i;
 
@@ -93,6 +79,27 @@ static char	**ft_free(char **str, size_t end, char *dst)
 	while (i <= end)
 		free(str[i++]);
 	free(str);
-	free(dst);
+	free(d);
 	return (NULL);
+}
+
+static char	**ft_splitting(char **split, char *d, size_t cnt, size_t s_len)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (i < s_len && j < cnt)
+	{
+		while (i < s_len && d[i] == '\0')
+			i++;
+		split[j] = ft_strdup(d + i);
+		if (split[j] == NULL)
+			return (ft_free(split, j, d));
+		while (i < s_len && d[i] != '\0')
+			i++;
+		j++;
+	}
+	split[j] = NULL;
 }
