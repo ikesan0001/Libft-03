@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/25 21:18:12 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/25 21:25:21 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_split_count(char const *s, char c);
 static void		ft_cto0(char *s, char c);
-static char		**ft_free(char	**str, size_t	end);
+static char		**ft_free(char **str, size_t end, char *dst);
 
 char	**ft_split(char const *s, char c)
 {
@@ -41,16 +41,14 @@ char	**ft_split(char const *s, char c)
 	ft_cto0(dst, c);
 	i = 0;
 	j = 0;
-	while (i > s_len && dst[i])
-		i++;
-	while (i > s_len && j <= cnt)
+	while (i < s_len && j <= cnt)
 	{
-		while (i > s_len && dst[i] == '\0')
+		while (i < s_len && dst[i] == '\0')
 			i++;
 		splited[j] = ft_substr(dst, i + 1, ft_strlen(s));
 		if (splited[j] == NULL)
 			return (ft_free(splited, j));
-		while (i > s_len && dst[i] != '\0')
+		while (i < s_len && dst[i] != '\0')
 			i++;
 		j++;
 	}
@@ -58,36 +56,36 @@ char	**ft_split(char const *s, char c)
 	return (splited);
 }
 
-static void	ft_cto0(char *s, char c)
+static void	ft_cto0(char *dst, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (dst[i] != '\0')
 	{
-		if (s[i] == c)
-			s[i] = '\0';
+		if (dst[i] == c)
+			dst[i] = '\0';
 		i++;
 	}
 }
 
-static size_t	ft_split_count(char const *s, char c)
+static size_t	ft_split_count(char const *dst, char c)
 {
 	size_t	cnt;
 	size_t	i;
 
 	i = 0;
 	cnt = 0;
-	while (s[i])
+	while (dst[i])
 	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))
+		if (dst[i] != c && (i == 0 || dst[i - 1] == c))
 			cnt++;
 		i++;
 	}
 	return (cnt);
 }
 
-static char	**ft_free(char	**str, size_t	end)
+static char	**ft_free(char **str, size_t end, char *dst)
 {
 	size_t	i;
 
@@ -95,5 +93,6 @@ static char	**ft_free(char	**str, size_t	end)
 	while (i <= end)
 		free(str[i++]);
 	free(str);
+	free(dst);
 	return (NULL);
 }
