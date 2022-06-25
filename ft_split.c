@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/25 11:52:40 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/25 21:08:27 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
+	dst = (char *)malloc((s_len + 1) * sizeof(char));
+	if (dst == NULL)
+		return (NULL);
 	ft_strlcpy(dst, s, s_len + 1);
 	cnt = ft_split_count(dst, c);
 	if (cnt == SIZE_MAX)
