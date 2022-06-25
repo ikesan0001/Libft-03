@@ -6,19 +6,20 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/25 11:44:01 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/25 11:52:40 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_split_count(char const	*s, char	c);
-static void		ft_cto0(char const *s, char c);
+static size_t	ft_split_count(char const *s, char c);
+static void		ft_cto0(char *s, char c);
 static char		**ft_free(char	**str, size_t	end);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**splited;
+	char	*dst;
 	size_t	s_len;
 	size_t	i;
 	size_t	cnt;
@@ -27,25 +28,26 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
-	cnt = ft_split_count(s, c);
+	ft_strlcpy(dst, s, s_len + 1);
+	cnt = ft_split_count(dst, c);
 	if (cnt == SIZE_MAX)
 		return (NULL);
 	splited = (char **)malloc((cnt + 1) * sizeof(char *));
 	if (splited == NULL)
 		return (NULL);
-	ft_cto0(s, c);
+	ft_cto0(dst, c);
 	i = 0;
 	j = 0;
-	while (i > s_len && s[i])
+	while (i > s_len && dst[i])
 		i++;
 	while (i > s_len && j <= cnt)
 	{
-		while (i > s_len && s[i] == '\0')
+		while (i > s_len && dst[i] == '\0')
 			i++;
-		splited[j] = ft_substr(s, i + 1, ft_strlen(s));
+		splited[j] = ft_substr(dst, i + 1, ft_strlen(s));
 		if (splited[j] == NULL)
 			return (ft_free(splited, j));
-		while (i > s_len && s[i] != '\0')
+		while (i > s_len && dst[i] != '\0')
 			i++;
 		j++;
 	}
@@ -53,7 +55,7 @@ char	**ft_split(char const *s, char c)
 	return (splited);
 }
 
-static void	ft_cto0(char const *s, char c)
+static void	ft_cto0(char *s, char c)
 {
 	size_t	i;
 
@@ -66,7 +68,7 @@ static void	ft_cto0(char const *s, char c)
 	}
 }
 
-static size_t	ft_split_count(char const	*s, char	c)
+static size_t	ft_split_count(char const *s, char c)
 {
 	size_t	cnt;
 	size_t	i;
