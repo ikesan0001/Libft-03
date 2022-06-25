@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iryoga </var/mail/iryoga>                  +#+  +:+       +#+        */
+/*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:57:25 by iryoga            #+#    #+#             */
-/*   Updated: 2022/05/23 10:49:38 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/26 01:17:22 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*s;
+	size_t	len;
 
-	s = (char *)malloc(ft_strlen(s1) + 1);
+	len = ft_strlen(s1);
+	if (len == SIZE_MAX)
+		return (NULL);
+	s = (char *)malloc((len + 1) * sizeof(char));
 	if (s == NULL)
 		return (NULL);
-	ft_strlcpy(s, s1, ft_strlen(s1) + 1);
+	ft_strlcpy(s, s1, len + 1);
 	return (s);
 }
