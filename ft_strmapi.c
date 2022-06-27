@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 23:44:03 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/27 23:58:58 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/27 23:59:43 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL || f == NULL)
 		return (NULL);
-	mapi = ft_subdup(s);
+	mapi = ft_strdup(s);
 	if (mapi == NULL)
 		return (NULL);
 	i = 0;
