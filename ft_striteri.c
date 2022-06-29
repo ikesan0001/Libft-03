@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:07:04 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/29 13:24:52 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/29 13:27:02 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	s_len = ft_strlen(s);
 	while (i < s_len)
-		(*f)(i, &s[i++]);
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 	return ;
 }
