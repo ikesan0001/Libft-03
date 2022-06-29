@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:28:58 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/29 13:37:15 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/29 13:38:43 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (c == NULL || fd == NULL)
-		return ;
 	write(fd, &c, 1);
 	return ;
 }
