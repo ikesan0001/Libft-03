@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 20:56:21 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/14 22:50:14 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/29 13:34:33 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdint.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
