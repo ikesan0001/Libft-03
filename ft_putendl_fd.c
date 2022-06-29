@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:54:39 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/29 13:59:22 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/29 14:06:36 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_putendl_fd(char *s, int fd)
 	while (i < s_len)
 	{
 		write(fd, &s[i], 1);
-		write(fd, "\n", 1);
 		i++;
 	}
+	write(fd, "\n", 1);
 	return ;
 }
