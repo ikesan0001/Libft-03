@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:42:38 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/29 13:49:02 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/29 13:49:54 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 	if (s == NULL)
 		return ;
+	i = 0;
 	s_len = ft_strlen(s);
 	while (i < s_len)
 	{
