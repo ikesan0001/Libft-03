@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:39:01 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/30 17:18:07 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/30 17:20:58 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int	long_n;
+	long	long_n;
 
 	long_n = n;
 	if (long_n < 0)
