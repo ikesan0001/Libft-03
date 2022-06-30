@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:47:38 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/26 01:54:03 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/30 17:41:30 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*c;
 	size_t	s_len;
 
-	if (s == NULL || len == SIZE_MAX)
+	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len || len == 0)

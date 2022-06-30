@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/29 13:17:45 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/30 17:44:07 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	d = ft_strdup(s);
 	if (d == NULL)
-		return (NULL);
+		return (ft_free(split, 0, d);)
 	ft_cto0(d, c);
 	return (ft_splitting(split, d, cnt, s_len));
 }
@@ -74,7 +74,7 @@ static char	**ft_free(char **str, size_t end, char *d)
 	size_t	i;
 
 	i = 0;
-	while (i <= end)
+	while (i < end)
 		free(str[i++]);
 	free(str);
 	free(d);
