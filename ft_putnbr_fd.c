@@ -6,11 +6,12 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:39:01 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/30 17:25:14 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/30 17:26:07 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
