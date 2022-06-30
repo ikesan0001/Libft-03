@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:22:26 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/30 17:44:07 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/30 17:45:13 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	d = ft_strdup(s);
 	if (d == NULL)
-		return (ft_free(split, 0, d);)
+		return (ft_free(split, 0, d));
 	ft_cto0(d, c);
 	return (ft_splitting(split, d, cnt, s_len));
 }
