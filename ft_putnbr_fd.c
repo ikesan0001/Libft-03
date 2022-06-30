@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:39:01 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/30 17:26:07 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/06/30 17:28:01 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(long_n / 10, fd);
 	long_n %= 10;
 	ft_putchar_fd(long_n + '0', fd);
-	printf("%c", (char)(long_n + '0'));
+	printf("\n%c", (char)(long_n + '0'));
 	return ;
 }
