@@ -6,7 +6,7 @@
 /*   By: iryoga <iryoga@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 13:54:39 by iryoga            #+#    #+#             */
-/*   Updated: 2022/06/29 14:06:36 by iryoga           ###   ########.fr       */
+/*   Updated: 2022/07/05 10:51:17 by iryoga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	s_len;
-
 	if (s == NULL)
 		return ;
-	i = 0;
-	s_len = ft_strlen(s);
-	while (i < s_len)
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 	return ;
 }
